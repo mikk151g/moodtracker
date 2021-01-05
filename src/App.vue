@@ -288,15 +288,18 @@
       </symbol>
     </svg>
     <activities-list></activities-list>
+    <save-activity></save-activity>
   </main>
 </template>
 
 <script>
 import ActivitiesList from "./components/ActivitiesList.vue";
+import SaveActivity from "./components/SaveActivity.vue";
 
 export default {
   components: {
     ActivitiesList,
+    SaveActivity,
   },
 };
 </script>
