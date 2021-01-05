@@ -1,5 +1,5 @@
 <template>
-  <ul>
+  <ul class="mb-40">
     <li
       v-for="activity in getActivities"
       :key="activity.id"
@@ -12,16 +12,9 @@
     </li>
   </ul>
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    class="text-green-800 w-28 bottom-0 right-0 fixed"
+    class="w-24 h-24 bg-green-800 rounded-full right-4 bottom-4 fixed text-white"
   >
-    <path
-      fill-rule="evenodd"
-      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-      clip-rule="evenodd"
-    />
+    <use xlink:href="#plusIcon" />
   </svg>
 </template>
 
