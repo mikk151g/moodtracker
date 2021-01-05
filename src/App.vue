@@ -1,5 +1,7 @@
 <template>
-  <activities-list></activities-list>
+  <main>
+    <activities-list></activities-list>
+  </main>
 </template>
 
 <script>
