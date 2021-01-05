@@ -1,7 +1,13 @@
 <template>
-  <div></div>
+  <activities-list></activities-list>
 </template>
 
 <script>
-export default {};
+import ActivitiesList from "./components/ActivitiesList.vue";
+
+export default {
+  components: {
+    ActivitiesList,
+  },
+};
 </script>
