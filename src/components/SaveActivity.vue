@@ -84,6 +84,13 @@ export default {
       this.currentRating = rating;
     },
     saveActivity() {
+      if (
+        this.title === "" ||
+        this.description === "" ||
+        this.currentRating === 0
+      ) {
+        return;
+      }
       const date = new Date();
       const year = date.getFullYear();
       let month = date.getMonth() + 1;
