@@ -49,9 +49,20 @@
       v-model="description"
     />
     <div class="flex justify-end">
-      <button type="submit" class="bg-green-800 rounded text-white px-4 py-2">
+      <button
+        to="/activities"
+        type="submit"
+        class="bg-green-800 rounded text-white px-4 py-2"
+      >
         Gem
       </button>
+      <!-- <router-link
+        to="/activities"
+        type="submit"
+        class="bg-green-800 rounded text-white px-4 py-2"
+      >
+        Gem
+      </router-link> -->
     </div>
   </form>
 </template>

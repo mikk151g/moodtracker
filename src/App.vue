@@ -289,6 +289,8 @@
     </svg>
     <activities-list v-if="isOnHomepage"></activities-list>
     <save-activity v-else></save-activity>
+    <!-- <router-view></router-view>
+    <router-view name="addActivity"></router-view> -->
   </main>
 </template>
 
