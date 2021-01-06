@@ -1,6 +1,6 @@
 <template>
   <h1 class="m-4">Hvordan har du det?</h1>
-  <form action="submit" class="m-4">
+  <form action="submit" class="m-4" @submit.prevent="changePage">
     <input
       type="text"
       class="w-full h-10 px-2 text-gray-400 rounded-sm border border-gray-300"
@@ -48,15 +48,22 @@
       class="w-full h-52 rounded-sm mb-8 border border-gray-300 text-gray-400 px-2 pt-2"
     />
     <div class="flex justify-end">
-      <button
-        type="submit"
-        class="bg-green-800 rounded text-white px-4 py-2 mb-40"
-      >
+      <button type="submit" class="bg-green-800 rounded text-white px-4 py-2">
         Gem
       </button>
     </div>
   </form>
 </template>
+
+<script>
+import { mapActions } from "vuex";
+
+export default {
+  methods: {
+    ...mapActions(["changePage"]),
+  },
+};
+</script>
 
 <style scoped>
 .emojis svg {

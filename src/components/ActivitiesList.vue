@@ -12,6 +12,8 @@
     </li>
   </ul>
   <svg
+    role="button"
+    @click="changePage"
     class="w-20 h-20 bg-green-800 rounded-full right-4 bottom-4 fixed text-white"
   >
     <use xlink:href="#plusIcon" />
@@ -20,10 +22,14 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 
 export default {
   computed: {
     ...mapGetters(["getActivities"]),
+  },
+  methods: {
+    ...mapActions(["changePage"]),
   },
 };
 </script>

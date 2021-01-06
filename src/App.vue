@@ -287,12 +287,13 @@
         </g>
       </symbol>
     </svg>
-    <activities-list></activities-list>
-    <save-activity></save-activity>
+    <activities-list v-if="isOnHomepage"></activities-list>
+    <save-activity v-else></save-activity>
   </main>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import ActivitiesList from "./components/ActivitiesList.vue";
 import SaveActivity from "./components/SaveActivity.vue";
 
@@ -300,6 +301,9 @@ export default {
   components: {
     ActivitiesList,
     SaveActivity,
+  },
+  computed: {
+    ...mapGetters(["isOnHomepage"]),
   },
 };
 </script>
