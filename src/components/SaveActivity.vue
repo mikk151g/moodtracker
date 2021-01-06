@@ -9,42 +9,41 @@
       <input type="radio" name="rating" id="shit" hidden />
       <label for="shit">
         <span class="sr-only">Shit</span>
-        <svg>
+        <svg @click="setRating(1)">
           <use xlink:href="#1" />
         </svg>
       </label>
       <input type="radio" name="rating" id="notGreat" hidden />
       <label for="notGreat">
         <span class="sr-only">Not great</span>
-        <svg>
+        <svg @click="setRating(2)">
           <use xlink:href="#2" />
         </svg>
       </label>
       <input type="radio" name="rating" id="normal" hidden />
       <label for="normal">
         <span class="sr-only">Normal</span>
-        <svg>
+        <svg @click="setRating(3)">
           <use xlink:href="#3" />
         </svg>
       </label>
       <input type="radio" name="rating" id="great" hidden />
       <label for="great">
         <span class="sr-only">Great</span>
-        <svg>
+        <svg @click="setRating(4)">
           <use xlink:href="#4" />
         </svg>
       </label>
       <input type="radio" name="rating" id="amazing" hidden />
       <label for="amazing">
         <span class="sr-only">Amazing</span>
-        <svg>
+        <svg @click="setRating(5)">
           <use xlink:href="#5" />
         </svg>
       </label>
     </div>
     <h2 class="mb-1 mt-4">Beskrivelse</h2>
     <textarea
-      type="text"
       class="w-full h-52 rounded-sm mb-8 border border-gray-300 text-gray-400 px-2 pt-2"
     />
     <div class="flex justify-end">
@@ -59,8 +58,16 @@
 import { mapActions } from "vuex";
 
 export default {
+  data() {
+    return {
+      currentRating: 0,
+    };
+  },
   methods: {
     ...mapActions(["changePage"]),
+    setRating(rating) {
+      this.currentRating = rating;
+    },
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <ul class="mb-40">
+  <ul class="mb-40" v-if="anyActivities">
     <li
       v-for="activity in getActivities"
       :key="activity.id"
@@ -11,6 +11,11 @@
       <p>Rating: {{ activity.rating }}</p>
     </li>
   </ul>
+  <div class="flex items-center justify-center h-screen" v-else>
+    <h1 class="mx-4 text-center font-bold">
+      Du har endnu ikke oprettet en aktivitet.
+    </h1>
+  </div>
   <svg
     role="button"
     @click="changePage"
@@ -27,6 +32,10 @@ import { mapActions } from "vuex";
 export default {
   computed: {
     ...mapGetters(["getActivities"]),
+    anyActivities() {
+      const activities = this.getActivities;
+      return activities.length > 0;
+    },
   },
   methods: {
     ...mapActions(["changePage"]),
