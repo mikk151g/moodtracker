@@ -12,7 +12,7 @@
     </li>
   </ul>
   <svg
-    class="w-20 h-20 bg-green-800 rounded-full right-4 bottom-4 fixed text-white hidden"
+    class="w-20 h-20 bg-green-800 rounded-full right-4 bottom-4 fixed text-white"
   >
     <use xlink:href="#plusIcon" />
   </svg>
