@@ -9,35 +9,35 @@
       <input type="radio" name="rating" id="shit" hidden />
       <label for="shit">
         <span class="sr-only">Shit</span>
-        <svg class="text-gray-300">
+        <svg>
           <use xlink:href="#1" />
         </svg>
       </label>
       <input type="radio" name="rating" id="notGreat" hidden />
       <label for="notGreat">
         <span class="sr-only">Not great</span>
-        <svg class="text-gray-300">
+        <svg>
           <use xlink:href="#2" />
         </svg>
       </label>
       <input type="radio" name="rating" id="normal" hidden />
       <label for="normal">
         <span class="sr-only">Normal</span>
-        <svg class="text-gray-300">
+        <svg>
           <use xlink:href="#3" />
         </svg>
       </label>
       <input type="radio" name="rating" id="great" hidden />
       <label for="great">
         <span class="sr-only">Great</span>
-        <svg class="text-gray-300">
+        <svg>
           <use xlink:href="#4" />
         </svg>
       </label>
       <input type="radio" name="rating" id="amazing" hidden />
       <label for="amazing">
         <span class="sr-only">Amazing</span>
-        <svg class="text-gray-300">
+        <svg>
           <use xlink:href="#5" />
         </svg>
       </label>
@@ -60,7 +60,7 @@
 
 <style scoped>
 .emojis svg {
-  @apply hover:text-yellow-300 w-14 h-14;
+  @apply hover:text-yellow-300 w-14 h-14 text-gray-300;
 }
 
 .emojis input + label > svg {
