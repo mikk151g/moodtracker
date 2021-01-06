@@ -1,9 +1,10 @@
 <template>
   <h1 class="m-4">Hvordan har du det?</h1>
-  <form action="submit" class="m-4" @submit.prevent="changePage">
+  <form action="submit" class="m-4" @submit.prevent="saveActivity">
     <input
       type="text"
       class="w-full h-10 px-2 text-gray-400 rounded-sm border border-gray-300"
+      v-model="title"
     />
     <div class="flex justify-between my-12 emojis">
       <input type="radio" name="rating" id="shit" hidden />
@@ -45,6 +46,7 @@
     <h2 class="mb-1 mt-4">Beskrivelse</h2>
     <textarea
       class="w-full h-52 rounded-sm mb-8 border border-gray-300 text-gray-400 px-2 pt-2"
+      v-model="description"
     />
     <div class="flex justify-end">
       <button type="submit" class="bg-green-800 rounded text-white px-4 py-2">
@@ -60,13 +62,34 @@ import { mapActions } from "vuex";
 export default {
   data() {
     return {
+      title: "",
+      description: "",
       currentRating: 0,
     };
   },
   methods: {
-    ...mapActions(["changePage"]),
+    ...mapActions(["addActivity"]),
     setRating(rating) {
       this.currentRating = rating;
+    },
+    saveActivity() {
+      const date = new Date();
+      const year = date.getFullYear();
+      let month = date.getMonth() + 1;
+      let dt = date.getDate();
+
+      if (dt < 10) {
+        dt = "0" + dt;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+      this.addActivity({
+        title: this.title,
+        date: dt + "-" + month + "-" + year,
+        description: this.description,
+        rating: this.currentRating,
+      });
     },
   },
 };

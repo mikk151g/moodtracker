@@ -28,6 +28,8 @@
 <script>
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
+// import TimeAgo from "javascript-time-ago";
+// import da from "javascript-time-ago/locale/da";
 
 export default {
   computed: {
@@ -36,6 +38,11 @@ export default {
       const activities = this.getActivities;
       return activities.length > 0;
     },
+    // convertDate(date) {
+    //   TimeAgo.addDefaultLocale(da);
+    //   const timeAgo = new TimeAgo("da");
+    //   timeAgo.format(Date.parse(Date.parse(date).getTime()));
+    // },
   },
   methods: {
     ...mapActions(["changePage"]),

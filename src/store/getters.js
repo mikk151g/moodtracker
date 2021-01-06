@@ -1,6 +1,6 @@
 export default {
     getActivities(state) {
-        if (state.activities.length > 10)
+        if (state.activities.length > 0)
         {
             return state.activities;
         }
