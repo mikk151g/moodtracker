@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 
 export default {
@@ -78,8 +79,11 @@ export default {
       currentRating: 0,
     };
   },
+  computed: {
+    ...mapGetters(["generateId"]),
+  },
   methods: {
-    ...mapActions(["addActivity"]),
+    ...mapActions(["addActivity", "incrementId"]),
     setRating(rating) {
       this.currentRating = rating;
     },
@@ -91,6 +95,9 @@ export default {
       ) {
         return;
       }
+      this.incrementId();
+      const id = this.generateId;
+      console.log(id);
       const date = new Date();
       const year = date.getFullYear();
       let month = date.getMonth() + 1;
@@ -103,6 +110,7 @@ export default {
         month = "0" + month;
       }
       this.addActivity({
+        id: this.id,
         title: this.title,
         date: dt + "-" + month + "-" + year,
         description: this.description,

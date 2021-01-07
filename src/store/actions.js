@@ -4,5 +4,8 @@ export default {
     },
     changePage(context) {
         context.commit('changePage');
+    },
+    incrementId(context) {
+        context.commit('incrementId');
     }
 };

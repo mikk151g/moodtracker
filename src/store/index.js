@@ -9,6 +9,7 @@ const store = createStore({
         return {
             activities: [],
             isOnHomepage: true,
+            currentId: 0
         };
     },
     mutations: rootMutations,

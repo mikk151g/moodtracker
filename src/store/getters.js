@@ -8,5 +8,8 @@ export default {
     },
     isOnHomepage(state) {
         return state.isOnHomepage;
+    },
+    generateId(state) {
+        return state.currentId;
     }
 };

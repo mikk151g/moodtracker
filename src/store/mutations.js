@@ -10,5 +10,8 @@ export default {
     },
     changePage(state) {
         state.isOnHomepage = !state.isOnHomepage;
+    },
+    incrementId(state) {
+        state.currentId++;
     }
 };
