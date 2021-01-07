@@ -10,35 +10,55 @@
       <input type="radio" name="rating" id="shit" hidden />
       <label for="shit">
         <span class="sr-only">Shit</span>
-        <svg @click="setRating(1)">
+        <svg
+          @click="setRating(1)"
+          @keypress.enter="selectRatingWithEnter('shit', 1)"
+          tabindex="0"
+        >
           <use xlink:href="#1" />
         </svg>
       </label>
       <input type="radio" name="rating" id="notGreat" hidden />
       <label for="notGreat">
         <span class="sr-only">Not great</span>
-        <svg @click="setRating(2)">
+        <svg
+          @click="setRating(2)"
+          @keypress.enter="selectRatingWithEnter('notGreat', 2)"
+          tabindex="0"
+        >
           <use xlink:href="#2" />
         </svg>
       </label>
       <input type="radio" name="rating" id="normal" hidden />
       <label for="normal">
         <span class="sr-only">Normal</span>
-        <svg @click="setRating(3)">
+        <svg
+          @click="setRating(3)"
+          @keypress.enter="selectRatingWithEnter('normal', 3)"
+          tabindex="0"
+        >
           <use xlink:href="#3" />
         </svg>
       </label>
       <input type="radio" name="rating" id="great" hidden />
       <label for="great">
         <span class="sr-only">Great</span>
-        <svg @click="setRating(4)">
+        <svg
+          @click="setRating(4)"
+          @keypress.enter="selectRatingWithEnter('great', 4)"
+          tabindex="0"
+        >
           <use xlink:href="#4" />
         </svg>
       </label>
       <input type="radio" name="rating" id="amazing" hidden />
       <label for="amazing">
         <span class="sr-only">Amazing</span>
-        <svg @click="setRating(5)">
+        <svg
+          @click="setRating(5)"
+          @keypress.enter="selectRatingWithEnter('amazing', 5)"
+          tabindex="0"
+        >
           <use xlink:href="#5" />
         </svg>
       </label>
@@ -77,6 +97,10 @@ export default {
     ...mapActions(["addActivity", "incrementId"]),
     setRating(rating) {
       this.currentRating = rating;
+    },
+    selectRatingWithEnter(id, rating) {
+      document.getElementById(id).checked = true;
+      this.setRating(rating);
     },
     saveActivity() {
       if (
