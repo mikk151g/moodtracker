@@ -91,10 +91,10 @@ export default {
       const date = new Date();
       const year = date.getFullYear();
       let month = date.getMonth() + 1;
-      let dt = date.getDate();
+      let day = date.getDate();
 
-      if (dt < 10) {
-        dt = "0" + dt;
+      if (day < 10) {
+        day = "0" + day;
       }
       if (month < 10) {
         month = "0" + month;
@@ -102,7 +102,7 @@ export default {
       this.addActivity({
         id: this.id,
         title: this.title,
-        date: dt + "-" + month + "-" + year,
+        date: day + "-" + month + "-" + year,
         description: this.description,
         rating: this.currentRating,
       });
