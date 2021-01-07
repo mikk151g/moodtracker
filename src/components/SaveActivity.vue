@@ -1,6 +1,6 @@
 <template>
   <h1 class="m-4">Hvordan har du det?</h1>
-  <form action="submit" class="m-4" @submit.prevent="saveActivity">
+  <form class="m-4">
     <input
       type="text"
       class="w-full h-10 px-2 text-gray-400 rounded-sm border border-gray-300"
@@ -50,19 +50,11 @@
     />
     <div class="flex justify-end">
       <button
-        to="/activities"
-        type="submit"
+        @click.prevent="saveActivity"
         class="bg-green-800 rounded text-white px-4 py-2"
       >
         Gem
       </button>
-      <!-- <router-link
-        to="/activities"
-        type="submit"
-        class="bg-green-800 rounded text-white px-4 py-2"
-      >
-        Gem
-      </router-link> -->
     </div>
   </form>
 </template>
@@ -96,7 +88,6 @@ export default {
       }
       this.incrementId();
       const id = this.generateId;
-      console.log(id);
       const date = new Date();
       const year = date.getFullYear();
       let month = date.getMonth() + 1;
@@ -115,6 +106,8 @@ export default {
         description: this.description,
         rating: this.currentRating,
       });
+
+      this.$router.push({ path: "/activities" });
     },
   },
 };
